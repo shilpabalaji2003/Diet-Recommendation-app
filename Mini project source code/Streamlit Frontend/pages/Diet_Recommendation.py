@@ -6,7 +6,6 @@ import pandas as pd
 from catboost import CatBoostClassifier
 import numpy as np
 import time
-import base64
 
 st.set_page_config(page_title="Diet Recommendation", page_icon="💪", layout="wide")
 
@@ -67,7 +66,7 @@ class Person:
 
     def generate_recommendation(self):
         # Load dataset
-        df = pd.read_csv(r'C:\Users\Shilpa\OneDrive - GEMS Education\Desktop\Mini project\Mini project source code\Streamlit Frontend\pages\main.csv')
+        df = pd.read_csv(r'C:\Users\Shilpa\OneDrive - GEMS Education\Desktop\Mini project\Mini project source code\Streamlit Frontend\pages\main1_modified.csv')
 
         X = df[['Age', 'Height (in cm)', 'Weight (in kg)', 'Gender', 'Activity level', 'Nutritional preference', 'Disease']]
         y_breakfast = df['Breakfast']
@@ -99,19 +98,6 @@ class Person:
         prediction_lunch = clf_lunch.predict(user_input)[0]
         prediction_dinner = clf_dinner.predict(user_input)[0]
         
-        if self.nutritional_preference == 'Veg':
-            replacements = {
-                'Breakfast': {'Egg': 'Oats'},
-                'Lunch': {'Fish': 'Vegetable curry'},
-                'Dinner': {'Fish': 'Vegetable soup'}
-            }
-
-            for meal in ['Breakfast', 'Lunch', 'Dinner']:
-                for item, replacement in replacements.get(meal, {}).items():
-                    if item in locals()[f'prediction_{meal.lower()}']:
-                        idx = np.where(locals()[f'prediction_{meal.lower()}'] == item)
-                        locals()[f'prediction_{meal.lower()}'][idx] = replacement
-
         return prediction_breakfast, prediction_lunch, prediction_dinner
     
 class Display:
