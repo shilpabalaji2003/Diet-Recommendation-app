@@ -6,8 +6,6 @@ import joblib
 
 st.set_page_config(page_title="Diet Recommendation", page_icon="💪", layout="wide")
 
-nutritions_values=['Calories','FatContent','SaturatedFatContent','CholesterolContent','SodiumContent','CarbohydrateContent','FiberContent','SugarContent','ProteinContent']
-
 #Streamlit states initialization
 
 if 'person' not in st.session_state:
