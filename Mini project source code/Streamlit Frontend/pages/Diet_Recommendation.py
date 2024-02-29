@@ -168,7 +168,6 @@ class Display:
     def display_calories(self, person):
         st.header("CALORIES CALCULATOR")
         maintain_calories=person.calories_calculator()
-        global_cal=maintain_calories
         st.write('The result shows the amount of daily calorie estimate that can be used as a guideline for how many calories to consume each day to maintain good health')
         st.metric(label="Optimum calorie", value=f'{round(maintain_calories)} Calories/day')
 
@@ -192,16 +191,16 @@ title="<h1 style='text-align: center;'>Automatic Diet Recommendation</h1>"
 st.markdown(title, unsafe_allow_html=True)
 with st.form("recommendation_from"):
     st.write("Modify the values and click the generate button to view your diet plan")
-    age=st.number_input('Age', min_value=40, max_value=100, step=1, value=st.session_state.age)
-    height = st.number_input('Height (in cm)',min_value=140, max_value=200, step=1, value=st.session_state.height)
-    weight = st.number_input('Weight (in kg)',min_value=30, max_value=150, step=1, value=st.session_state.weight)
-    gender = st.radio('Gender',('Male','Female'), index=0 if st.session_state.gender == 'Male' else 1)
+    age = st.number_input('Age', min_value=40, max_value=100, step=1, value=st.session_state.get('age', None))
+    height = st.number_input('Height (in cm)',min_value=140, max_value=200, step=1, value=st.session_state.get('height', None))
+    weight = st.number_input('Weight (in kg)',min_value=30, max_value=150, step=1, value=st.session_state.get('weight', None))
+    gender = st.radio('Gender',('Male','Female'), index=0 if st.session_state.get('gender', None) == 'Male' else 1)
     activity_levels = ['Little/no exercise', 'Light exercise', 'Moderate exercise (3-5 days/wk)', 'Very active (6-7 days/wk)', 'Extra active (very active & physical job)']
-    activity_index = activity_levels.index(st.session_state.activity_level) if st.session_state.activity_level in activity_levels else 0
-    activity = st.select_slider('Activity', options=activity_levels, value=st.session_state.activity_level, format_func=lambda x: x)
-    nutritional_preference=st.radio('Nutritional Preference', ('Non-veg', 'Veg'), index=0 if st.session_state.nutritional_preference == 'Non-veg' else 1)
+    activity_index = activity_levels.index(st.session_state.get('activity_level', None)) if st.session_state.get('activity_level', None) in activity_levels else 0
+    activity = st.select_slider('Activity', options=activity_levels, value=st.session_state.get('activity_level', None), format_func=lambda x: x)
+    nutritional_preference=st.radio('Nutritional Preference', ('Non-veg', 'Veg'), index=0 if st.session_state.get('nutritional_preference', None) == 'Non-veg' else 1)
     disease_options=["Hypertension", "Arthritis", "Diabetes", "Cardiovascular diseases", "Osteoporosis", "Alzheimer's", "Chronic Obstructive Pulmonary Disease (COPD)", 'Cancer', 'Depression and anxiety disorders', 'Visual Impairments', 'No diseases']
-    disease=st.multiselect("Select the diseases you suffer from: ", disease_options, default=st.session_state.disease)
+    disease=st.multiselect("Select the diseases you suffer from: ", disease_options, default=st.session_state.get('disease', None))
     generated=st.form_submit_button("Generate")
 
     if generated:

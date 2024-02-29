@@ -1,5 +1,20 @@
 import streamlit as st
 from streamlit_echarts import st_echarts
+from Diet_Recommendation import Person, RecommendationGenerator
+
+# Initialize RecommendationGenerator
+recommender = RecommendationGenerator()
+
+def get_maintain_calories():
+    # Check if person object exists in session state
+    if 'person' in st.session_state and st.session_state.person:
+        # Access the person object from session state
+        person = st.session_state.person
+        # Calculate maintain_calories
+        maintain_calories = person.calories_calculator()
+        return maintain_calories
+    else:
+        return None
 
 nutritions_values = ['Calories', 'FatContent', 'SaturatedFatContent', 'CholesterolContent', 'SodiumContent', 'CarbohydrateContent', 'FiberContent', 'SugarContent', 'ProteinContent']
 
@@ -59,6 +74,27 @@ for choice, meals_ in zip(choices, [breakfast_recommendations, lunch_recommendat
             for nutrition_value in nutritions_values:
                 total_nutrition_values[nutrition_value] += get_nutritional_value(meal, nutrition_value)
 
+maintain_calories = get_maintain_calories()
+total_calories_consumed = total_nutrition_values['Calories']
+
+st.markdown(f'<h5 style="text-align: center;font-family:sans-serif;">Total Calories in Recipes vs {st.session_state.weight_loss_option} Calories:</h5>', unsafe_allow_html=True)
+total_calories_graph_options = {
+"xAxis": {
+"type": "category",
+"data": ['Total Calories you chose', f"{st.session_state.weight_loss_option} Calories"],
+},
+"yAxis": {"type": "value"},
+"series": [
+{
+    "data": [
+        {"value":total_calories_consumed, "itemStyle": {"color":["#33FF8D","#FF3333"][total_calories_consumed>maintain_calories]}},
+        {"value": maintain_calories, "itemStyle": {"color": "#3339FF"}},
+    ],
+    "type": "bar",
+}
+],
+}
+st_echarts(options=total_calories_graph_options,height="400px",)
 
 st.markdown(f'<h5 style="text-align: center;font-family:sans-serif;">Nutritional Values:</h5>', unsafe_allow_html=True)
 nutritions_graph_options = {
