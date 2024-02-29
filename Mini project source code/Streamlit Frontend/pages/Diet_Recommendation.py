@@ -90,7 +90,8 @@ class RecommendationGenerator:
 
             joblib.dump(clf, filename)
             return clf
-
+        
+    #71, 166, 55, Female, Light excercise, Veg, diabetes
     def generate_recommendation(self, age, height, weight, gender, activity_level, nutritional_preference, disease):
         diseases_str = ', '.join(disease)
 
