@@ -50,10 +50,6 @@ def get_nutritional_value(meal_name, nutrition_value):
         # If the meal_name is not found, return 0 for the specified nutrition_value
         return 0
 
-# Now you can use this function to retrieve the nutritional value of a meal
-# For example:
-# get_nutritional_value('Oats', 'Calories') will return 150
-
 
 # Calculating the sum of nutritional values of the choosen recipes
 total_nutrition_values = {nutrition_value: 0 for nutrition_value in nutritions_values}
