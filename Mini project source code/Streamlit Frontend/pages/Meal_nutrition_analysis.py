@@ -50,7 +50,6 @@ def get_nutritional_value(meal_name, nutrition_value):
         # If the meal_name is not found, return 0 for the specified nutrition_value
         return 0
 
-
 # Calculating the sum of nutritional values of the choosen recipes
 total_nutrition_values = {nutrition_value: 0 for nutrition_value in nutritions_values}
 for choice, meals_ in zip(choices, [breakfast_recommendations, lunch_recommendations, dinner_recommendations]):
@@ -59,6 +58,7 @@ for choice, meals_ in zip(choices, [breakfast_recommendations, lunch_recommendat
             # For each nutritional value, add the value of the chosen meal to the total
             for nutrition_value in nutritions_values:
                 total_nutrition_values[nutrition_value] += get_nutritional_value(meal, nutrition_value)
+
 
 st.markdown(f'<h5 style="text-align: center;font-family:sans-serif;">Nutritional Values:</h5>', unsafe_allow_html=True)
 nutritions_graph_options = {
