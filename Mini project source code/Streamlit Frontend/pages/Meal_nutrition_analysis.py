@@ -61,6 +61,7 @@ for choice, meals_ in zip(choices, [breakfast_recommendations, lunch_recommendat
             for nutrition_value in nutritions_values:
                 total_nutrition_values[nutrition_value] += get_nutritional_value(meal, nutrition_value)
 
+st.markdown("&nbsp;", unsafe_allow_html=True)
 st.markdown(f'<h5 style="text-align: center;font-family:sans-serif;">Nutritional Values:</h5>', unsafe_allow_html=True)
 nutritions_graph_options = {
 "tooltip": {"trigger": "item"},
@@ -103,3 +104,18 @@ table_html += "</table>"
 
 # Displaying the nutritional values table using st.markdown()
 st.markdown(table_html, unsafe_allow_html=True)
+
+st.markdown("&nbsp;", unsafe_allow_html=True)
+st.markdown("&nbsp;", unsafe_allow_html=True)
+# Allow the user to select the nutritional value for the histogram
+st.subheader('Distribution of nutritional values across different meals')
+selected_nutrition = st.selectbox('Nutritional value:', nutritions_values)
+
+# Get the values for the selected nutritional value across different meals and their corresponding names
+selected_meals = breakfast_recommendations + lunch_recommendations + dinner_recommendations
+selected_nutrition_values = [get_nutritional_value(meal, selected_nutrition) for meal in selected_meals]
+
+# Create a histogram using Plotly
+histogram_fig = go.Figure(data=[go.Bar(x=selected_meals, y=selected_nutrition_values)])
+histogram_fig.update_layout(title=f'Distribution of {selected_nutrition} Across Meals', xaxis_title='Meal', yaxis_title=selected_nutrition)
+st.plotly_chart(histogram_fig, use_container_width=True)

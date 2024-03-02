@@ -220,5 +220,4 @@ with st.form("recommendation_from"):
             display.display_calories(person)
         with st.spinner('Generating recommendations...this may take a few seconds'):
             breakfast, lunch, dinner = recommender.generate_recommendation(age, height, weight, gender, activity, nutritional_preference, disease)
-            st.write("Recommendations:")
             display.display_recommendations(breakfast, lunch, dinner)
