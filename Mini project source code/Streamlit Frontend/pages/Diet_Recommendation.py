@@ -1,12 +1,8 @@
 import streamlit as st
 import pandas as pd
 from catboost import CatBoostClassifier
-import time
 import joblib
 import numpy as np
-from PIL import Image
-import base64
-
 
 st.set_page_config(page_title="Diet Recommendation", page_icon="💪", layout="wide")
 
