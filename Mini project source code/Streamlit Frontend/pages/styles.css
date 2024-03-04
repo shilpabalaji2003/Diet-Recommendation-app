@@ -72,7 +72,7 @@ nav ul li a {
 .tagline_start{
     position: absolute;
     top: 30%;
-    left: 50%;
+    left: 37%;
     transform: translateX(-50%);
     text-align: left;
     z-index: 20;
@@ -97,6 +97,19 @@ nav ul li a {
     line-height: 1.2;
     text-transform: none !important;
 }
+
+.description {
+    position: relative;
+    padding-top: 80px;
+    top: 55%; /* Adjusted top position */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    z-index: 20;
+    font-size: 1.8rem; /* Adjusted font size */
+    line-height: 1.6; /* Adjusted line height */
+}
+
 
 .content-wrapper {
     box-sizing: border-box;
