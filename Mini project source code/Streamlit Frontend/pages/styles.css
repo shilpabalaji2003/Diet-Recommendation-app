@@ -46,7 +46,7 @@ header h1{
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
     margin-right: 10px;
 }
 
@@ -104,7 +104,7 @@ nav ul li a {
     top: 55%; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
-    text-align: left;
+    text-align: justify;
     z-index: 20;
     font-size: 1.8rem; /* Adjusted font size */
     line-height: 1.6; /* Adjusted line height */
@@ -120,7 +120,61 @@ nav ul li a {
 .services-section,
 .about-section,
 .team-section {
+    text-align: center;
     padding: 100px 0;
     background-color: white;
-    color: #e74c3c;
+    color: #000000;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+}
+
+.service-card {
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: scale(1.1);
+}
+
+.card-content {
+    position: relative;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-card h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 10px; /* Adjusted left padding */
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.diet-recommendation {
+    background-image: url('diet-recommendation.jpg');
+}
+
+.meal-nutrition {
+    background-image: url('meal-nutrition-analysis.jpg');
+}
+
+.cognitive-mind-games {
+    background-image: url('cognitive-mind-games.jpg');
+}
+
+.latest-news {
+    background-image: url('latest-news.jpg');
 }
