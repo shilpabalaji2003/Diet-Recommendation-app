@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cura</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background_container">
@@ -43,18 +44,20 @@
     </div>
 
     <section id="services" class="services-section">
-        <h2>Our Services</h2>
+        <h2>OUR SERVICES</h2>
         <div class="services-container">
-            <div class="service-card diet-recommendation">
+            <a href="https://app-diet.streamlit.app/" class="service-card diet-recommendation">
                 <div class="card-content">
                     <h3>Diet Recommendation</h3>
                 </div>
-            </div>
-            <div class="service-card meal-nutrition">
+            </a>
+
+            <a href="https://meal-nutrition-analysis.streamlit.app/" class="service-card meal-nutrition">
                 <div class="card-content">
                     <h3>Meal Nutrition Analysis</h3>
                 </div>
-            </div>
+            </a>
+
             <div class="service-card cognitive-mind-games">
                 <div class="card-content">
                     <h3>Cognitive Mind Games</h3>
@@ -66,20 +69,31 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
 
     <section id="about" class="about-section">
-        <h2>About Us</h2>
+        <h2>ABOUT US</h2>
         <!-- Add your about us content here -->
     </section>
 
     <section id="team" class="team-section">
-        <h2>Our Team</h2>
+        <h2>OUR TEAM</h2>
         <!-- Add your team members here -->
     </section>
     
     
-
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "2PNH7-kaAEFihAbe1kJ-w",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="2PNH7-kaAEFihAbe1kJ-w"
+        domain="www.chatbase.co"
+        defer>
+        </script>
     <script src="script.js"></script>
 </body>
 </html>
