@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending in News</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='news_styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="news-box">
+            <h2>Trending in News</h2>
+            <ul class="news-list">
+                {% for article in articles %}
+                    <li><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

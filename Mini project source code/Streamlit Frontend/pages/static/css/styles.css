@@ -165,17 +165,36 @@ nav ul li a {
 }
 
 .diet-recommendation {
-    background-image: url('diet-recommendation.jpg');
+    background-image: url('/static/images/diet-recommendation.jpg');
 }
 
 .meal-nutrition {
-    background-image: url('meal-nutrition-analysis.jpg');
+    background-image: url('/static/images/meal-nutrition-analysis.jpg');
 }
 
 .cognitive-mind-games {
-    background-image: url('cognitive-mind-games.jpg');
+    background-image: url('/static/images/cognitive-mind-games.jpg');
 }
 
 .latest-news {
-    background-image: url('latest-news.jpg');
+    background-image: url('/static/images/latest-news.jpg');
+}
+
+
+.latest-news-container {
+    position: absolute;
+    top: 270px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 260px;
+}
+
+.latest-news-container iframe {
+    width: 300px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    border: none;
 }

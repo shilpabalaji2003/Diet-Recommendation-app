@@ -1,0 +1,51 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.news-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust the width as needed */
+}
+
+.news-box h2 {
+    margin-top: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news-list li {
+    margin-bottom: 10px;
+}
+
+.news-list li a {
+    color: #333; /* Remove the blue color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 5px; /* Add space between each newsline */
+}
+
+.news-list li a:hover {
+    color: #007bff;
+    background-color: #f0f0f0;
+}
