@@ -26,5 +26,9 @@ def latest_news():
 def index():
     return render_template('index.html')
 
+@app.route('/cognitive_games.html')
+def cognitive_games():
+    return render_template('cognitive_games.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
