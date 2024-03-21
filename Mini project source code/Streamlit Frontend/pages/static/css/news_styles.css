@@ -42,7 +42,6 @@ body {
     padding: 8px;
     background-color: #fff;
     border-radius: 4px;
-    margin-bottom: 5px; /* Add space between each newsline */
 }
 
 .news-list li a:hover {
