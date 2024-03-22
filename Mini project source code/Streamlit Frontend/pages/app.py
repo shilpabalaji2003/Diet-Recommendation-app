@@ -30,5 +30,13 @@ def index():
 def cognitive_games():
     return render_template('cognitive_games.html')
 
+@app.route('/sudoku.html')
+def sudoku():
+    return render_template('sudoku.html')
+
+@app.route('/cards.html')
+def cards():
+    return render_template('cards.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

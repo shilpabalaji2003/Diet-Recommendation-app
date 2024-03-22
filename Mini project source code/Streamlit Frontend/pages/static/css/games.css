@@ -5,6 +5,7 @@ body {
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .background-container {
@@ -25,29 +26,39 @@ body {
 }
 
 .content-wrapper {
-    position: relative; /* Make it relative */
-    z-index: 1; /* Ensure it's above the background video */
-}
-
-header {
-    display: flex;
-    justify-content: center;
+    position: absolute; /* Make it relative */
+    z-index: 20; /* Ensure it's above the background video */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
 .welcome-section {
-    padding: 100px 20px; /* Added padding to create space */
-    text-align: center;
+    padding: 0px 20px;
+}
+
+.welcome-section h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .welcome-section p {
-    max-width: 800px; /* Limiting the width of the paragraph */
-    margin: 0 auto; /* Centering the paragraph */
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 2;
+    font-weight: bolder;
 }
 
 .game-section {
     display: flex;
     justify-content: space-around;
-    padding: 50px 0;
+    padding: 50px 0px;
 }
 
 .game-card {
@@ -55,7 +66,7 @@ header {
     height: 400px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -76,9 +87,10 @@ header {
     left: 10px;
     width: calc(100% - 20px);
     padding: 0;
-    color: #ffffff;
+    color: #000000;
     text-align: center;
     font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .sudoku {
@@ -86,5 +98,5 @@ header {
 }
 
 .pokemon-card-game {
-    background-image: url('/static/images/pokemon-card-game.jpg');
+    background-image: url('/static/images/pokemon.jpg');
 }
