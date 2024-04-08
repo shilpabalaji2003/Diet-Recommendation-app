@@ -33,7 +33,7 @@ button {
   overflow: hidden;
   position: relative;
   width: 900px;
-  height: 550px;
+  height: 500px;
   top: 60px;
   margin: 0 auto 100px;
   background: #fff;
@@ -305,4 +305,20 @@ input {
 .cont.s--signup .sign-up {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 0x; /* Adjust the margin as needed */
+}
+
+.logo-container img {
+  width: 100px; /* Adjust the width of the logo */
+  height: auto;
+}
+
+.logo-container h1 {
+  font-size: 2em; /* Adjust the font size of the website name */
+  margin-top: 10px; /* Adjust the margin as needed */
+  font-weight: 250;
 }
