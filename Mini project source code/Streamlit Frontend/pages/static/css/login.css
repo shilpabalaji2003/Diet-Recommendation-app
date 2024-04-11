@@ -9,9 +9,10 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
-  background-image: url('login_image.jpg');
+  background-image: url('../images/login_image.jpg');
   background-size: cover;
   background-position: center;
+  overflow-y: hidden;
 }
 
 input,
@@ -34,7 +35,7 @@ button {
   position: relative;
   width: 900px;
   height: 500px;
-  top: 60px;
+  top: 10px;
   margin: 0 auto 100px;
   background: #fff;
   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3),
@@ -108,7 +109,7 @@ button {
   top: 0;
   width: 900px;
   height: 100%;
-  background-image: url("ext.jpg");
+  /* background-image: url("ext.jpg"); */
   opacity: 0.8;
   background-size: cover;
   -webkit-transition: -webkit-transform 1.2s ease-in-out;

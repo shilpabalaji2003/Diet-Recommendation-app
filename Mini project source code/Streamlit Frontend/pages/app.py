@@ -10,6 +10,10 @@ def fetch_news(feed_url, num_articles):
         articles.append({'title': entry.title, 'link': entry.link})
     return articles
 
+@app.route('/login.html')
+def login():
+    return render_template('login.html')
+
 @app.route('/latest_news')
 def latest_news():
     # URL of the BBC News RSS feed
