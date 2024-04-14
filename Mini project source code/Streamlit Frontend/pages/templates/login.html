@@ -17,17 +17,20 @@
 <div class="cont">
   <div class="form sign-in">
     <h2>Welcome</h2>
-    <label>
-      <span class="text">Email</span>
-      <input type="email" />
-    </label>
-    <label>
-      <span class="text">Password</span>
-      <input type="password" />
-    </label>
-    <button type="button" class="submit">Sign In</button>
-
+    <form action="/login.html" method="POST">
+      <label>
+        <span class="text">Email</span>
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        <span class="text">Password</span>
+        <input type="password" name="password" required />
+      </label>
+      <button type="submit" class="submit" name="signin">Sign In</button>
+    </form>
   </div>
+
+
   <div class="sub-cont">
     <div class="img">
       <div class="img__text m--up">
@@ -43,22 +46,24 @@
         <span class="m--in">Sign In</span>
       </div>
     </div>
+
     <div class="form sign-up">
       <h2>Create your Account</h2>
-      <label>
-        <span class="text">Name</span>
-        <input type="text" />
-      </label>
-      <label>
-        <span class="text">Email</span>
-        <input type="email" />
-      </label>
-      <label>
-        <span class="text">Password</span>
-        <input type="password" />
-      </label>
-      <button type="button" class="submit">Sign Up</button>
-
+      <form action="/login.html" method="POST">
+        <label>
+          <span class="text">Name</span>
+          <input type="text" name="name" required/>
+        </label>
+        <label>
+          <span class="text">Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span class="text">Password</span>
+          <input type="password" name="password" required />
+        </label>
+        <button type="submit" class="submit" name="signup">Sign Up</button>
+    </form>
     </div>
   </div>
 </div>
