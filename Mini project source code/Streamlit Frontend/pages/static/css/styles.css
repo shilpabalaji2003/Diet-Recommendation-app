@@ -123,7 +123,7 @@ nav ul li a {
 .team-section {
     text-align: center;
     padding: 100px 0;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: #000000;
 }
 
@@ -206,6 +206,8 @@ nav ul li a {
     height: auto;
     cursor: pointer;
     padding-right: 10px;
+    border-radius: 50px;
+    
 }
 
 .latest-news-container iframe {
