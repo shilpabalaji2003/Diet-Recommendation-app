@@ -23,9 +23,9 @@
         <nav>
             <ul>
                 <li><a href="#services">Our Services</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#vids">Trending Videos</a></li>
                 <li><a href="#team">Our Team</a></li>
-                <li><a href="login.html">Login/Sign up</a></li>
+                <!-- <li><a href="login.html">Login/Sign up</a></li> -->
             </ul>
         </nav>
     </header>
@@ -45,7 +45,7 @@
     </div>
 
     <section id="services" class="services-section" style="background-image: url('/static/images/bg.jpg');">
-        <h2>OUR SERVICES</h2>
+        <h2 class="headings">OUR SERVICES</h2>
         <div class="services-container">
             <a href="https://app-diet.streamlit.app/" class="service-card diet-recommendation">
                 <div class="card-content">
@@ -67,36 +67,39 @@
         </div>
     </section>    
 
-    <section id="about" class="about-section"  style="background-image: url('/static/images/bg2.jpg');">
+    <section id="vids" class="vids-section"  style="background-image: url('/static/images/bg2.jpg');">
         <div class="about-content">
-            <h2>ABOUT US</h2>
+            <h2 class="headings">TRENDING IN VIDEOS</h2>
+            <div id="thumbnails-container" class="carousel">
+                <!-- Thumbnails will be dynamically inserted here -->
+            </div>
         </div>
     </section>
     
 
-    <section id="team" class="team-section" style="background-image: url('/static/images/about.png');">
-        <h2>OUR TEAM</h2>
+    <section id="team" class="team-section" style="background-image: url('/static/images/team.jpg');">
+        <h2 class="team-heading">OUR TEAM</h2>
         <div>
             <p class="about">Cura is a passion project crafted by three dedicated data science enthusiasts from Mar Athanasius College of Engineering, Kothamangalam. Our journey began with a shared vision to harness the power of data science for the betterment of health and wellness. At Cura, we blend cutting-edge technology with a deep-rooted commitment to promoting vibrant living and graceful aging. Join us as we embark on a transformative journey towards fostering healthier lifestyles and embracing the joy of living to the fullest.</p>
         </div>
         <div class="team-members">
             <div class="team-member">
                 <img src="/static/images/nidhin.jpg" alt="Team Member 1">
-                <p>Nidhin Biju</p>
+                <p style="color: white;">Nidhin Biju</p>
             </div>
             <div class="team-member">
                 <img src="/static/images/safal.jpg" alt="Team Member 2">
-                <p>Safal Sakeer</p>
+                <p style="color: white;">Safal Sakeer</p>
             </div>
             <div class="team-member">
                 <img src="/static/images/shilpa.jpg" alt="Team Member 3">
-                <p>Shilpa Balaji</p>
+                <p style="color: white;">Shilpa Balaji</p>
             </div>
         </div>
     </section>
 
     <div class="news-icon" id="news-icon">
-        <img src="/static/images/news-icon.jpg" alt="News Icon">
+        <img src="/static/images/news-icon-photoaidcom-cropped.jpg" alt="News Icon">
     </div>
     
     <div class="latest-news-container">
